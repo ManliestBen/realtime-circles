@@ -23,8 +23,9 @@ var initials = '';
 
 circles.addEventListener('click', function(evt) {
   //addCircle(evt.clientX, evt.clientY, randomBetween(10,100), getRandomRGBA());
-  
+  confetti.start(500);
   socket.emit('add-circle', {
+    
     initials: initials,
     x: evt.clientX,
     y: evt.clientY,
