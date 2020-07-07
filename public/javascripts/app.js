@@ -1,3 +1,6 @@
+const pinch = new Audio('/audio/pinch.mp3');
+const plunger = new Audio('/audio/plunger.wav');
+
 // get our connection to the socket.io server
 var socket = io();
 // listen to the server for the `add-circle` event
@@ -24,6 +27,7 @@ var initials = '';
 circles.addEventListener('click', function(evt) {
   //addCircle(evt.clientX, evt.clientY, randomBetween(10,100), getRandomRGBA());
   confetti.start(500);
+  plunger.play();
   socket.emit('add-circle', {
     
     initials: initials,
